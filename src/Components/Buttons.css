@@ -1,0 +1,95 @@
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 0;
+  column-gap: 0;
+}
+
+.buttons .clearButtons {
+  grid-column: 1 / 5;
+  grid-row: 1;
+}
+
+#allClear {
+  width: 8rem;
+  height: 4.5rem;
+  background-color: rgb(209, 49, 49);
+  color: white;
+  font-weight: bold;
+}
+
+#clear {
+  width: 5.5rem;
+  height: 4.5rem;
+  background-color: rgb(146, 96, 49);
+  color: white;
+  font-weight: bold;
+}
+
+.buttons .operators {
+  grid-column-start: 4;
+  grid-row: 2 / 5;
+}
+
+#divide,
+#multiply,
+#add,
+#subtract {
+  width: 5.1rem;
+  height: 4.5rem;
+  background-color: rgb(142, 151, 151);
+  color: white;
+  font-weight: bold;
+}
+
+#equals {
+  width: 5.1rem;
+  height: 4.5rem;
+  background-color: rgb(6, 75, 102);
+  color: white;
+  font-weight: bold;
+}
+
+.buttons .numbersButtons {
+  grid-column: 1 / 4;
+  grid-row: 2 / 4;
+  
+}
+
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine {
+  width: 4.5rem;
+  height:4.5rem;
+  background-color: dimgrey;
+  color: white;
+  font-weight: bold;
+}
+
+.buttons .zeroAndDecimal {
+  grid-column: 1 / 4;
+  grid-row: 4 / 5;
+}
+
+#zero {
+  width: 9rem;
+  height: 4.5rem;
+  background-color: dimgrey;
+  color: white;
+  font-weight: bold;
+}
+
+#decimal {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: dimgrey;
+  color: white;
+  font-weight: bold;
+}

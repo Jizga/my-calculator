@@ -1,68 +1,68 @@
 import React from "react";
+import "./Buttons.css";
 
 export default function Buttons(props) {
   return (
-    <div>
-      <div className="operatorButtons">
-        <button
-          id="allClear"
-          value="AC"
-          onClick={(e) => props.pressButton(e.target.value)}
-        >
-          AC
-        </button>
-        <button
-          id="clear"
-          value="C"
-          onClick={(e) => props.pressButton(e.target.value)}
-        >
-          C
-        </button>
-        <button
-          id="divide"
-          value="/"
-          onClick={(e) => props.pressButton(e.target.value)}
-        >
-          /
-        </button>
-        <button
-          id="multiply"
-          value="*"
-          onClick={(e) => props.pressButton(e.target.value)}
-        >
-          *
-        </button>
-        <button
-          id="add"
-          value="+"
-          onClick={(e) => props.pressButton(e.target.value)}
-        >
-          +
-        </button>
-        <button
-          id="subtract"
-          value="-"
-          onClick={(e) => props.pressButton(e.target.value)}
-        >
-          -
-        </button>
-        <button
-          id="equals"
-          value="="
-          onClick={(e) => props.pressButton(e.target.value)}
-        >
-          =
-        </button>
-      </div>
+    <div className="buttons">
+      
+        <div className="operatorButtons clearButtons">
+          <button
+            id="allClear"
+            value="AC"
+            onClick={(e) => props.pressButton(e.target.value)}
+          >
+            AC
+          </button>
+          <button
+            id="clear"
+            value="C"
+            onClick={(e) => props.pressButton(e.target.value)}
+          >
+            C
+          </button>
+          <button
+            id="divide"
+            value="/"
+            onClick={(e) => props.pressButton(e.target.value)}
+          >
+            /
+          </button>
+        </div>
+
+        <div className="operatorButtons operators">
+        
+          <button
+            id="multiply"
+            value="*"
+            onClick={(e) => props.pressButton(e.target.value)}
+          >
+            *
+          </button>
+          <button
+            id="add"
+            value="+"
+            onClick={(e) => props.pressButton(e.target.value)}
+          >
+            +
+          </button>
+          <button
+            id="subtract"
+            value="-"
+            onClick={(e) => props.pressButton(e.target.value)}
+          >
+            -
+          </button>
+          <button
+            id="equals"
+            value="="
+            onClick={(e) => props.pressButton(e.target.value)}
+          >
+            =
+          </button>
+        </div>
+     
 
       <div className="numbersButtons">
-        <button
-          id="zero"
-          value="0"
-          onClick={(e) => props.pressButton(e.target.value)}
-        >
-          0
-        </button>
         <button
           id="one"
           value="1"
@@ -125,6 +125,15 @@ export default function Buttons(props) {
           onClick={(e) => props.pressButton(e.target.value)}
         >
           9
+        </button>
+      </div>
+      <div className="zeroAndDecimal">
+        <button
+          id="zero"
+          value="0"
+          onClick={(e) => props.pressButton(e.target.value)}
+        >
+          0
         </button>
         <button
           id="decimal"

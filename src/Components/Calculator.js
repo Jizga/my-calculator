@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Display from "./Display";
 import Buttons from "./Buttons";
+import './Calculate.css'
 
 export default function Calculator() {
   const [result, setResult] = useState("0");
@@ -8,6 +9,10 @@ export default function Calculator() {
   const pressButton = (button) => {
     if (!isNaN(button)) {
       leftZeros(result, button);
+    } else if (button === "+" || button === "*" || button === "/") {
+      changeOperator(button);
+    } else if (button === ".") {
+      changePoint(button);
     } else if (button === "=") {
       calculate();
     } else if (button === "AC") {
@@ -28,6 +33,7 @@ export default function Calculator() {
     }
 
     try {
+      // eslint-disable-next-line
       const final = eval(checkResult);
       const finalResult = redondeoMagico(final);
       setResult(finalResult);
@@ -59,13 +65,34 @@ export default function Calculator() {
     }
   };
 
-  const doubleOperator = (cuenta, simbolo) => {
-   
+  const changeOperator = (simbol) => {
+    let lastCharacter = result.substr(result.length - 1);
+    if (
+      lastCharacter === "+" ||
+      lastCharacter === "*" ||
+      lastCharacter === "/"
+    ) {
+      setResult(result.slice(0, -1) + simbol);
+    } else {
+      setResult(result.toString() + simbol.toString());
+    }
+  };
+
+  const changePoint = (point) => {
+    if (!/[.]/.test(result.toString())) {
+      setResult(result.toString() + point);
+    } else if (/[\+\-\/\*]/.test(result.toString())) {
+      const parts = result.split(/[\+\-\/\*]/g);
+      const lastPart = parts[parts.length - 1];
+      if (!/[.]/.test(lastPart.toString())) {
+        setResult(result.toString() + point);
+      }
+    }
   };
 
   return (
-    <div id="display">
-      <Display screen={result} />
+    <div className="calculator">
+      <Display className="formulaScreen" screen={result} />
       <Buttons pressButton={pressButton} />
     </div>
   );
